@@ -14,9 +14,9 @@ public class FavoriteController : ControllerBase
     {
         _favoriteService = favoriteService;
     }
-    
-    //
-    [HttpPost("add-favorite")]
+
+    // POST: api/favorite
+    [HttpPost]
     public async Task<ActionResult> AddFavorite([FromBody] FavoritesDto dto)
     {
         var favorite = await _favoriteService.AddFavorite(dto.UserId, dto.ProductId);
@@ -26,9 +26,9 @@ public class FavoriteController : ControllerBase
         }
         return Ok(favorite);
     }
-    
-    //
-    [HttpDelete("remove-favorite")]
+
+    // DELETE: api/favorite
+    [HttpDelete]
     public async Task<ActionResult> RemoveFavorite([FromBody] FavoritesDto dto)
     {
         var favorite = await _favoriteService.RemoveFavorite(dto.UserId, dto.ProductId);
@@ -36,15 +36,15 @@ public class FavoriteController : ControllerBase
         {
             return BadRequest("Product not exists");
         }
-        
-        return Ok();   
+
+        return Ok();
     }
-    
-    //
-    [HttpGet("get-favorites")]
+
+    // GET: api/favorite/{userId}
+    [HttpGet("{userId}")]
     public async Task<ActionResult> GetFavoritesByUserId(int userId)
     {
         var favorites = await _favoriteService.GetFavoritesByUserId(userId);
-        return Ok(favorites);   
+        return Ok(favorites);
     }
 }

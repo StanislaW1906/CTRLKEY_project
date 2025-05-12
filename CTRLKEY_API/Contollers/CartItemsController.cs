@@ -14,37 +14,48 @@ public class CartItemsController : ControllerBase
     {
         _cartItemsService = cartItemsService;
     }
-    
-    //
-    [HttpPost("add-cart-items")]
+
+    // POST: api/cart-items
+    [HttpPost]
     public async Task<ActionResult> AddCartItems([FromBody] CartItemsDto dto)
     {
-        var cartItams = await _cartItemsService.AddCartItem(dto.UserId, dto.ProductId, dto.Quantity);
-        return Ok(cartItams);
+        var cartItems = await _cartItemsService.AddCartItem(dto.UserId, dto.ProductId, dto.Quantity);
+        return Ok(cartItems);
     }
-    
-    //
-    [HttpGet("get-cart-items/{id}")]
+
+    // GET: api/cart-items/{id}
+    [HttpGet("{id}")]
     public async Task<ActionResult> GetCartItemsById(int id)
     {
-        var cartItam = await _cartItemsService.GetCartItemById(id);
-        return Ok(cartItam);
+        var cartItem = await _cartItemsService.GetCartItemById(id);
+        if (cartItem == null)
+        {
+            return NotFound();
+        }
+        return Ok(cartItem);
     }
-    
-    //
-    [HttpDelete("delete-cart-items/{id}")]
+
+    // DELETE: api/cart-items/{id}
+    [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteCartItemsById(int id)
     {
-        var cartItam = await _cartItemsService.DeleteCartItemById(id);
-        return Ok(cartItam);
+        var cartItem = await _cartItemsService.DeleteCartItemById(id);
+        if (cartItem == null)
+        {
+            return NotFound();
+        }
+        return Ok(cartItem);
     }
-    
-    //
-    [HttpPut("update-cart-items")]
-    public async Task<ActionResult> UpdateCartItemsById([FromBody] CartItemsDto dto)
+
+    // PUT: api/cart-items/{id}
+    [HttpPut("{id}")]
+    public async Task<ActionResult> UpdateCartItems(int id, [FromBody] CartItemsDto dto)
     {
-        
-        return Ok();
+        var updatedCartItem = await _cartItemsService.UpdateCartItem(id , dto.Quantity);
+        if (updatedCartItem == null)
+        {
+            return NotFound();
+        }
+        return Ok(updatedCartItem);
     }
-    
 }

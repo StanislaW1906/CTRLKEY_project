@@ -49,17 +49,16 @@ public class CartItemsService
     }
     
     //
-    public async Task<CartItems> UpdateCartItem(int id, CartItems cartItems)
+    public async Task<CartItems> UpdateCartItem(int id, int quantity)
     {
         var cartItem = await _database.CartItems.FindAsync(id);
         if (cartItem == null)
         {
             return null;
         }
-        cartItem.UserId = cartItems.UserId;
-        cartItem.ProductId = cartItems.ProductId;
-        cartItem.Quantity = cartItems.Quantity;
-        
+
+        cartItem.Quantity = quantity;
+
         _database.CartItems.Update(cartItem);
         await _database.SaveChangesAsync();
         return cartItem;
