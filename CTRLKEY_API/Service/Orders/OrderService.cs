@@ -4,17 +4,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CTRLKEY_API.Service.Orders;
 
-public class OrdersService
+public class OrderService
 {
     private readonly DBContext _database;
     
-    public OrdersService(DBContext dbContext)
+    public OrderService(DBContext dbContext)
     {
         _database = dbContext;
     }
     
     //
-    public async Task<Order> AddOrder(int userId, double totalPrice, string status, DateTime orderDate, string deliveryAddress, string city, string novaPoshtaAddress)
+    public async Task<Order> AddOrder(int userId, double? totalPrice, string status, DateTime orderDate, string? deliveryAddress, string city, string novaPoshtaAddress)
     {
         var order = new Order
         {

@@ -1,5 +1,7 @@
-﻿using CTRLKEY_project.Models.Users;
-namespace CTRLKEY_project.Models.Tokens;
+﻿using System;
+using CTRLKEY_API.Models.Users;
+
+namespace CTRLKEY_API.Models.Tokens;
 
 public class ResetToken
 {
@@ -8,7 +10,7 @@ public class ResetToken
     public int UserId { get; set; }
     public User User { get; set; }
     public DateTime CreatedAt { get; set; }
-    public DateTime ExpiresAt { get; set; }
+    public DateTime ExpiryDate { get; set; }
     public bool IsUsed { get; set; }
     
 }

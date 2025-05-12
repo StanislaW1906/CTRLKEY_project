@@ -1,4 +1,7 @@
-﻿namespace CTRLKEY_API.Service.Orders;
+﻿using CTRLKEY_API.Models.Orders;
+using CTRLKEY_API.Models.Tokens;
+
+namespace CTRLKEY_API.Service.Orders;
 
 public class OrderItems
 {
@@ -7,4 +10,5 @@ public class OrderItems
     public int ProductId { get; set; }
     public int Quantity { get; set; }
     public double UnitPrice { get; set; }
+
 }

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTRLKEY_project", "CTRLKEY_project\CTRLKEY_project.csproj", "{D81DE483-EE51-4103-ADEF-D47DBDED6050}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTRLKEY_API", "CTRLKEY_API\CTRLKEY_API.csproj", "{D81DE483-EE51-4103-ADEF-D47DBDED6050}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTRLKEY_Client", "CTRLKEY_Client\CTRLKEY_Client.csproj", "{D7408948-9A08-4643-AFA8-63CC3C9F30E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +14,9 @@ Global
 		{D81DE483-EE51-4103-ADEF-D47DBDED6050}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D81DE483-EE51-4103-ADEF-D47DBDED6050}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D81DE483-EE51-4103-ADEF-D47DBDED6050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7408948-9A08-4643-AFA8-63CC3C9F30E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7408948-9A08-4643-AFA8-63CC3C9F30E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7408948-9A08-4643-AFA8-63CC3C9F30E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7408948-9A08-4643-AFA8-63CC3C9F30E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,6 +1,8 @@
-﻿namespace CTRLKEY_API.Models.Tokens;
+﻿using CTRLKEY_API.Models.Users;
 
-public class Favorites
+namespace CTRLKEY_API.Models.Tokens;
+
+public class Favorite
 {
     public int Id { get; set; }
     public int UserId { get; set; }
